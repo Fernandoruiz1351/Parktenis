@@ -343,7 +343,6 @@ main h3{
 .prod4,.prod5{
     width: 45%;
     height: 390px;
-    color:red ;
     background-color: white;
     border-radius: 20px;
     display: flex;
@@ -612,7 +611,7 @@ main h3{
 
 .torneo{
     display: flex;
-    width: 100%;
+    width: auto;
     height: auto;
     margin-bottom: 50px;
     flex-direction: row;
@@ -622,7 +621,7 @@ main h3{
 
 
 .masc, .fem{
-    height: 900px;
+    height: auto;
     width: 45%;
     min-width: 320px;
     background-color: #9AEBA3;
@@ -630,6 +629,7 @@ main h3{
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    margin: 10px;
 }
 
 .masc h2, .fem h2{
@@ -657,12 +657,28 @@ main h3{
 }
 
 th, td {
+    height: 100%;
     font-size: 0.8rem;
     border: 1px solid #ddd;
     padding: 5px;
     color: white;
     background-color:#012030;
 }
+
+
+
+@media (max-width: 500px) {
+    .esconder {
+      display: none !important;
+    }
+}
+
+@media (min-width: 500px) {
+    .escondido {
+      display: none !important;
+    }
+}
+
 
 /* TORNEOS - FINALIZADOS */
 
