@@ -732,15 +732,16 @@ th, td {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-around;
-
+    flex-wrap: wrap;
 }
 
 .cat{
-    width: 30%;
+    width: 300px;
     height: auto;
     background-color:#9AEBA3;
     border-radius: 10px;
     padding: 20px;
+    margin-top:20px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -1038,44 +1039,6 @@ li{
       height: 200px;
     }
 }
-
-
-
-/* .productos{
-    width: 70%;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    padding-bottom: 50px;
-}
-
-.prod10{
-    width: 30%;
-    height: 600px;
-    background-color: white;
-    margin-top: 50px;
-    border-radius: 5px;
-    border: #024e74 2px solid;
-
-}
-
-.prod10 h3{
-    margin: 25px;
-    color: #012030;
-    height: 120px;
-}
-
-.prod10 .precio{
-    color: blue;
-    height: 20px;
-}
-
-.prod10 img{
-    width: 50%;
-    height: 260px;
-} */
 
 
 
