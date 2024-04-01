@@ -718,7 +718,7 @@ th, td {
     width: 100%;
     color: #012030;
     padding: 50px;
-    padding: 50px;
+    margin-top: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -736,7 +736,7 @@ th, td {
 }
 
 .cat{
-    width: 300px;
+    width: 420px;
     height: auto;
     background-color:#9AEBA3;
     border-radius: 10px;
@@ -767,16 +767,25 @@ th, td {
 
 .reservas {
     background-color: #012030;
+    height: auto;
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 100px;
 }
 
+.resTitulo{
+    height: 200px;
+    padding: 50px;
+    margin-top: 20px;
+    background-color: #012030;
+}
+
 .info{
     width: 400px;
-    height: 450px;
+    height: 500px;
     background-color: #9AEBA3;
     border-top-left-radius: 30px;
     border-bottom-left-radius: 30px;
@@ -786,8 +795,25 @@ th, td {
     justify-content: center;
 }
 
+@media (max-width: 999px) {
+    .info {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
 .info img{
     width: 350px;
+}
+
+@media (max-width: 560px) {
+    .info{
+        padding: 20px;
+        width: 350px;
+    }
+    .info img{
+        width: 270px;
+    }
 }
 
 .info h2, .info .redes{
@@ -797,7 +823,7 @@ th, td {
 
 .datos {
     background-color: #9AEBA3;
-    height: 450px;
+    height: 500px;
     width: 400px;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
@@ -805,6 +831,20 @@ th, td {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+@media (max-width: 999px) {
+    .datos {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .datos{
+        padding: 20px;
+        width: 350px;
+    }
 }
 
 .datos form{
@@ -846,6 +886,7 @@ th, td {
 
 .box1 {
     color:#024e74;
+    width: 230px;
     display: flex;
     flex-direction: row;
     margin-bottom: 15px; 
@@ -855,6 +896,13 @@ th, td {
 .box1 input, .box1 select{
     width: 150px;
     margin-left: 5px;
+}
+
+@media (max-width: 600px) {
+    .box1 input, .box1 select{
+        width: 120px;
+        margin-left: 5px;
+    }
 }
 
 .socio-options {
