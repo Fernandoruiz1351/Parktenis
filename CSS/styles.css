@@ -829,7 +829,7 @@ th, td {
 }
 
 .btn button {
-    width: 50%;
+    width: auto;
     padding: 10px 20px; 
     font-size: 16px; 
     background-color:#024e74; 
@@ -894,6 +894,16 @@ th, td {
     font-size: 20px;
 }
 
+@media (max-width: 600px) {
+    .buscador input {
+      width: 250px;
+    }
+    .search-input::placeholder {
+        font-size: 1rem;
+        font-style: italic; /* Estilo del texto del placeholder */
+    }
+}
+
 .buscador button{
     background-color: white;
     height: 30px;
@@ -910,6 +920,7 @@ th, td {
 
 .container10{
     height: auto;
+    display: flex;
 }
 
 .fitros{
@@ -928,6 +939,13 @@ th, td {
     margin: 30px;
 }
 
+@media (max-width: 1100px) {
+    .filtro {
+      margin: 0;
+      padding: 0;
+    }
+}
+
 .filtro ul{
     list-style: none;
     margin-top: 10px;
@@ -941,6 +959,17 @@ th, td {
     margin-top: 5px;   
 }
 
+@media (max-width: 600px) {
+    .filtro ul{
+      padding: 0;
+    }
+    .fitros ul{
+        padding: 5px;
+    }
+}
+
+
+
 .filtro li a{
     text-decoration: none;
     color: rgb(114, 114, 114);
@@ -951,6 +980,68 @@ li{
 }
 
 .productos{
+    width: 70%;
+    background-color: white;
+}
+
+.col-4{
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.prod10{
+    height: auto;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: #024e74 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.prod10 h3{
+    margin: 25px;
+    color: #012030;
+    height: 120px;
+}
+
+.prod10 .precio{
+    color: blue;
+    height: 20px;
+}
+
+.prod10 p{
+    color: #024e74;
+}
+
+.prod10 img{
+    width: 50%;
+    height: 260px;
+}
+
+.desc{
+    height: 150px;
+}
+
+@media (max-width: 1100px) {
+    .desc {
+      height: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .desc {
+      height: 200px;
+    }
+}
+
+
+
+/* .productos{
     width: 70%;
     background-color: white;
     display: flex;
@@ -984,7 +1075,7 @@ li{
 .prod10 img{
     width: 50%;
     height: 260px;
-}
+} */
 
 
 
