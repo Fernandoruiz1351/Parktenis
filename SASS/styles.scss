@@ -1,0 +1,1058 @@
+$color1: white;
+$color2:#363432;
+$color3:#9AEBA3;
+$color4:#012030;
+$color5:#024e74;
+$color6:blue;
+$color7:#2093cc;
+$color8:black;
+
+@mixin sizes ($width,$height,$background-color,$display,$flex-direction,$align-items,$justify-content,$flex-wrap){
+    width: $width;
+    height: $height;
+    background-color: $background-color;
+    display: $display;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    flex-wrap: $flex-wrap;
+}
+
+
+/* GENERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+    height: auto;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+.index {
+    background-image: url("../resources/principal.jpg");
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+    justify-content: center;
+    animation: movimiento 20s linear forwards; 
+}
+
+@keyframes movimiento {
+    0% { background-position: 0 0; } 
+    100% { background-position: 100% 100%; } 
+}
+
+
+/* NAV */
+
+.navbar{
+    background-color: $color2;
+
+    .navbar-brand{
+        color: $color1;
+        span{
+            color: $color3 !important;
+        }
+    }
+
+    .navbar-brand:hover{
+        color:$color1;
+    }
+
+    .nav-link{
+        color: $color1 !important;
+
+        &:hover{
+            text-decoration: underline;
+            text-decoration-thickness: 0.1em;
+            text-underline-offset: 0.2em;
+        }
+    }
+}
+
+.miEstilo, .nav-item{
+    text-shadow: 0 0 5px $color8;
+}
+
+
+
+/* FOOTER */
+
+footer{
+    @include sizes(100%,auto,$color2,flex,row,flex-start,space-evenly,wrap);
+    text-align: center;
+    color: $color1;
+    padding: 20px;
+
+    .titulo,.contacto,.redes,.mapa{
+        @include sizes(250px,100%,none,flex,column,center,space-between,nowrap);
+        margin-top: 50px;
+
+        span{
+            color: $color3;
+        }
+
+        a,i{
+            color: $color1;
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+        p{
+            margin-bottom: 15px;
+            text-shadow: 0 0 5px $color8;
+        }
+    }
+}
+
+
+.wsp span{
+    margin-left: 5px;
+    margin-bottom: 13px;
+}
+
+.wsp{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mapa iframe{
+    margin-top: 9px;
+    height: 90%;
+    width: 90%;
+}
+
+/* INDEX - MAIN */
+
+.box2{
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    color: $color1;
+}
+
+main h3{
+    color: $color1;
+}
+
+.subtitulo{
+    margin-top: 10px;
+}
+
+
+/* INDEX - QUIENES SOMOS */
+
+.somos{
+    @include sizes(100%,auto,$color4,flex,row,none,center,nowrap);   
+    text-align: center;
+}
+
+.sec1 {
+    @include sizes(100%,auto,none,flex,column,none,center,nowrap);
+    color: $color1;
+    margin: 200px;
+
+    @media screen and (max-width: 700px) {
+        margin: 50px;
+    }
+}
+
+/* INDEX - PROFESORES */
+
+.profesores {
+    @include sizes(100%,auto,$color4,flex,row,none,center,nowrap);
+    padding-bottom: 200px;
+    text-align: center;
+}
+
+.profes {
+    width: 95%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 250px);
+    grid-template-areas: 
+        "texto prof1 prof2"
+        "texto prof3 prof4";
+    grid-gap: 10px;
+    border: 5px solid $color3;
+    border-radius: 20px;
+    padding: 50px;
+}
+
+
+.prof {
+    @include sizes(auto,240px,$color3,flex,column,center,center,nowrap);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+
+    img{
+        width: 40%;
+        height: auto;
+        background-color:$color4;
+        border-radius: 50%;
+        filter: grayscale(100%);
+        transition: filter 0.5s ease;
+
+        &:hover{
+            filter: grayscale(0%);
+        }
+    }
+
+    p{
+        color: $color4;
+    }
+}
+
+
+.texto{
+    grid-area: texto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h2{
+        color: $color3;
+    }
+
+    p{
+        color: $color1;
+    }
+
+}
+
+#prof1 {
+    grid-area: prof1;
+}
+
+#prof2 {
+    grid-area: prof2;
+}
+
+#prof3 {
+    grid-area: prof3;
+}
+
+#prof4 {
+    grid-area: prof4;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    .profes {
+        height: 1600px;
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr ;
+        grid-template-rows: repeat(5, 250px);
+        grid-template-areas: 
+            "texto"
+            "prof1"
+            "prof2"
+            "prof3"
+            "prof4";
+    }
+    .prof img{
+        height: 40%;
+        width: auto;
+    }
+}
+
+
+
+/* INDEX - TIENDA */
+
+
+
+.tienda{
+    @include sizes(100%,auto,$color4,flex,column,none,space-around,nowrap);
+
+    
+
+    h2,p{
+        color: $color1;
+        padding-bottom:10px ;
+    }
+}
+
+.tienda1{
+    @include sizes(100%,auto,$color3,flex,row,center,space-evenly,wrap);
+    padding: 20px
+}
+
+
+.prod1{
+    @include sizes(35%,650px,$color4,flex,column,center,space-evenly,nowrap);
+    text-align: center;
+
+    img{
+        width: 65%;
+        height: auto;
+        background-color:$color4;
+    }
+}
+
+.prod2{
+    @extend .prod1;
+    width: 47%;
+
+    a{
+        text-decoration: none;
+        color: $color1;
+
+        &:hover{
+            text-decoration: underline;
+            color: $color3;
+        }
+    }
+}
+
+.prod3{
+    @include sizes(100%,85%,$color4,flex,row,center,space-evenly,nowrap);
+}
+
+.prod4{
+    @include sizes(45%,390px,$color1,flex,column,center,space-evenly,nowrap);
+    border-radius: 20px;
+    padding: 8px;
+    margin: 10px;
+
+    p{
+        color:$color5;
+    }
+
+    img{
+        width: auto;
+        height: 135px;
+    }
+    h5{
+        color: $color6;
+    }
+}
+
+.prod5{
+    @extend .prod4;
+}
+
+@media screen and (max-width: 800px) {
+    .tienda1 {
+        flex-direction: column;
+    }
+    .prod1, .prod2{
+        width: 90%;
+        height: auto;
+    }
+
+    .prod3{
+        flex-direction: column;
+    }
+
+    .prod4, .prod5{
+        height: 350px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .prod4, .prod5{
+        width: 80%;
+    }
+}
+
+
+/* INDEX - COMUNIDAD */
+
+.comunidad{
+    @include sizes(100%,auto,$color4,flex,column,center,none,nowrap);
+    text-align: center;
+    padding: 200px 50px;
+
+    h2{
+        color: $color4;
+        background-color:$color3;
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+
+.comuni{
+    background-color: $color3;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,3fr);;
+    grid-template-rows:repeat(3,310px);
+    padding: 30px;
+    grid-gap: 30px;
+}
+
+.comu{
+    height: auto;
+    background-size:cover;
+    background-position: center;
+    border: 3px solid $color8;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    z-index: 0;
+
+    &:hover{
+        transform: scale(1.05);
+        background-color: rgb(0,0,0,0.9);
+        opacity: 0.5;
+        z-index: 0;
+    }
+}
+
+
+
+.comu1{
+    background-image: url("../resources/alumno.jpg");
+    grid-row: 1/3;
+}
+
+.comu2{
+    background-image: url("../resources/alumno3.jpg");
+    background-position: right;
+}
+
+.comu3{
+    background-image: url("../resources/alumno4.jpg");
+}
+
+.comu4{
+    background-image: url("../resources/alumno6.jpg");
+}
+
+.comu5{
+    background-image: url("../resources/alumno7.jpg");
+}
+
+.comu6{
+    background-image: url("../resources/alumnos.jpg");
+    grid-column: 1/3;
+}
+
+.comu7{
+    background-image: url("../resources/Alumno\ 1.jpeg");
+    background-position:top
+}
+
+@media screen and (max-width: 800px) {
+    .comuni{
+        background-color: $color3;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,2fr);;
+        grid-template-rows:repeat(4,310px);
+        padding: 30px;
+        grid-gap: 30px;
+    }
+
+    .comu1{
+        background-image: url("../resources/alumno.jpg");
+        grid-row: 1/2;
+    }
+    
+    .comu2{
+        background-image: url("../resources/alumno3.jpg");
+        background-position: right;
+    }
+    
+    .comu3{
+        background-image: url("../resources/alumno4.jpg");
+    }
+    
+    .comu4{
+        background-image: url("../resources/alumno6.jpg");
+    }
+    
+    .comu5{
+        background-image: url("../resources/alumno7.jpg");
+    }
+    
+    .comu6{
+        background-image: url("../resources/Alumno\ 1.jpeg");
+        grid-column: 2/3;
+        background-position: top;
+    }
+    
+    
+    .comu7{
+        background-image: url("../resources/alumnos.jpg");
+        background-position:top;
+        grid-column: 1/3;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    .comunidad{
+        padding: 200px 20px;
+    }
+
+    .comuni{
+        background-color: $color3;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1,2fr);;
+        grid-template-rows:repeat(7,300px);
+        padding: 30px;
+        grid-gap: 30px;
+    }
+
+    .comu1{
+        background-image: url("../resources/alumno.jpg");
+        grid-row: 1/2;
+    }
+    
+    .comu2{
+        background-image: url("../resources/alumno3.jpg");
+        background-position: right;
+    }
+    
+    .comu3{
+        background-image: url("../resources/alumno4.jpg");
+    }
+    
+    .comu4{
+        background-image: url("../resources/alumno6.jpg");
+    }
+    
+    .comu5{
+        background-image: url("../resources/alumno7.jpg");
+    }
+    
+    .comu6{
+        background-image: url("../resources/Alumno\ 1.jpeg");
+        grid-column: 1/2;
+        background-position: top;
+    }
+    
+    
+    .comu7{
+        background-image: url("../resources/alumnos.jpg");
+        background-position:top;
+        grid-column: 1/2;
+    }
+
+}
+
+
+/* TORNEOS - MASC/FEM */
+
+.torneos{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    background-color: $color4;
+
+    h1{
+        margin-top: 100px;
+    }
+
+    h3{
+        width: 300px;
+    }
+
+    p{
+        font-style: italic;
+        margin-bottom: 50px;
+        color: $color1;
+    }
+}
+
+.torneo{
+    display: flex;
+    width: auto;
+    height: auto;
+    margin-bottom: 50px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.masc{
+    height: auto;
+    width: 45%;
+    min-width: 320px;
+    background-color: $color3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px;
+
+    h2{
+        color: $color4;
+    }
+}
+
+.fem{
+    @extend .masc;
+}
+
+.torn1{
+    width: 94%;
+    height: auto;
+    background-color: $color4;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;  
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    img{
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+    }
+}
+
+
+th, td {
+    height: 100%;
+    font-size: 0.8rem;
+    border: 1px solid #ddd;
+    padding: 5px;
+    color: $color1;
+    background-color:$color4;
+}
+
+
+
+@media (max-width: 500px) {
+    .esconder {
+    display: none !important;
+    }
+}
+
+@media (min-width: 500px) {
+    .escondido {
+    display: none !important;
+    }
+}
+
+
+/* TORNEOS - FINALIZADOS */
+
+.finalizados{
+    width: 95%;
+    height: auto;
+    background-color: $color1;
+    border-radius: 20px;
+    margin-top:100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+
+    h2{
+        color: $color4;
+        margin-bottom: 50px;
+        margin-top: 20px;
+    }
+
+    table{
+        margin-bottom: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        width: auto;
+    }
+}
+
+/* RANKING */
+
+.ranking{
+    display: flex;
+    flex-direction: column;
+
+    table{
+        margin-top: 20px;
+    }
+}
+
+.tit{
+    background-color: $color4;
+    width: 100%;
+    color: $color4;
+    padding: 50px;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.rank{
+    background-color: $color4;
+    padding-bottom: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.cat{
+    width: 420px;
+    height: auto;
+    background-color:$color3;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top:20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+
+    td{
+        height: 60px;
+    }
+}
+
+/* RESERVAS */
+
+.res{
+    color:$color1;
+    background-color:$color4;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.reservas {
+    background-color: $color4;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 100px;
+}
+
+.resTitulo{
+    height: 200px;
+    padding: 50px;
+    margin-top: 20px;
+    background-color: $color4;
+}
+
+.info{
+    width: 400px;
+    height: 500px;
+    background-color: $color3;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img{
+        width: 350px;
+    }
+
+    h2, .redes{
+        padding-top: 20px;
+        color: $color5;
+    }
+}
+
+@media (max-width: 999px) {
+    .info {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .info{
+        padding: 20px;
+        width: 350px;
+    }
+    .info img{
+        width: 270px;
+    }
+}
+
+.datos {
+    background-color: $color3;
+    height: 500px;
+    width: 400px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    form{
+        margin: 20px;
+    }
+}
+
+@media (max-width: 999px) {
+    .datos {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
+@media (max-width: 560px) {
+    .datos{
+        padding: 20px;
+        width: 350px;
+    }
+}
+
+.reservas label {
+    margin-bottom: 5px;
+}
+
+.reservas input,
+.reservas select,
+.reservas button {
+    margin-bottom: 10px;
+    width: 100%; 
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; 
+
+    button{
+        width: auto;
+        padding: 10px 20px; 
+        font-size: 16px; 
+        background-color:$color5; 
+        color: $color1; 
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:hover{
+            background-color:$color4;
+        }
+    }
+}
+
+.box1 {
+    color:$color5;
+    width: 230px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px; 
+    justify-content: space-between;
+
+    input,select{
+        width: 150px;
+        margin-left: 5px;
+    }
+}
+
+@media (max-width: 600px) {
+    .box1 input, .box1 select{
+        width: 120px;
+        margin-left: 5px;
+    }
+}
+
+.socio-options {
+    width: 170px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    label{
+        color: $color5;
+        width: 50px;
+        margin-right: 15px; 
+        display: flex;  
+        flex-direction: row;
+    }
+}
+
+.red i{
+    color: $color5;
+    margin-top: 10px;
+}
+
+/* TIENDA */
+
+.tienda2{
+    background-color: $color4;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    p{
+        color: $color1;
+    }
+}
+
+.buscador{
+    input{
+    width: 500px;
+    height: 30px;
+    font-size: 20px;
+    }
+
+    button{
+        background-color: $color1;
+        height: 30px;
+        width: 30px;
+        font-size: 20px;
+        border-radius: 50%;
+        border: none;
+
+        &:hover{
+            background-color:$color7;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .buscador input {
+    width: 250px;
+    }
+    .search-input::placeholder {
+        font-size: 1rem;
+        font-style: italic; 
+    }
+}
+
+
+.container10{
+    height: auto;
+    display: flex;
+}
+
+.fitros{
+    background-color:rgb(226, 226, 226);
+    width: 30%;
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.filtro{
+    background-color: rgb(226, 226, 226);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 30px;
+
+    ul{
+        list-style: none;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    li{
+        margin-top: 5px; 
+        color: $color8;
+
+        a{
+            text-decoration: none;
+            color: rgb(114, 114, 114);
+        }
+    }
+}
+
+@media (max-width: 1100px) {
+    .filtro {
+    margin: 0;
+    padding: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .filtro ul{
+    padding: 0;
+    }
+    .fitros ul{
+        padding: 5px;
+    }
+}
+
+.productos{
+    width: 70%;
+    background-color: $color1;
+}
+
+.col-4{
+    height: auto;
+    padding: 0;
+    margin: 0;
+}
+
+.prod10{
+    height: auto;
+    background-color: $color1;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: $color5 2px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    h3{
+        margin: 25px;
+        color: $color4;
+        height: 120px;
+    }
+    .precio{
+        color: $color6;
+        height: 20px;
+    }
+    p{
+        color: $color5;
+    }
+    img{
+        width: 50%;
+        height: 260px;
+    }
+}
+
+.desc{
+    height: 150px;
+}
+
+@media (max-width: 1100px) {
+    .desc {
+    height: 200px;
+    }
+}
+
+@media (max-width: 767px) {
+    .desc {
+    height: 200px;
+    }
+}
+
+
+
+
+
