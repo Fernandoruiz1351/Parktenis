@@ -1032,24 +1032,24 @@ th, td {
         color: $color5;
     }
     img{
-        width: 50%;
+        width: auto;
         height: 260px;
     }
 }
 
 .desc{
-    height: 150px;
+    height: auto;
 }
 
 @media (max-width: 1100px) {
     .desc {
-    height: 200px;
+    height: auto;
     }
 }
 
 @media (max-width: 767px) {
     .desc {
-    height: 200px;
+    height: auto;
     }
 }
 
