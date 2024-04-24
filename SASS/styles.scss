@@ -318,11 +318,11 @@ main h3{
 }
 
 .prod3{
-    @include sizes(100%,85%,$color4,flex,row,center,space-evenly,nowrap);
+    @include sizes(100%,auto,$color4,flex,row,center,space-evenly,nowrap);
 }
 
 .prod4{
-    @include sizes(45%,390px,$color1,flex,column,center,space-evenly,nowrap);
+    @include sizes(45%,450px,$color1,flex,column,center,space-evenly,nowrap);
     border-radius: 20px;
     padding: 8px;
     margin: 10px;
@@ -333,7 +333,7 @@ main h3{
 
     img{
         width: auto;
-        height: 135px;
+        height: 200px;
     }
     h5{
         color: $color6;
@@ -358,7 +358,7 @@ main h3{
     }
 
     .prod4, .prod5{
-        height: 350px;
+        height: auto;
     }
 }
 
@@ -697,6 +697,8 @@ th, td {
 
 
 .rank{
+    // background-image: url("../resources/torneo10.jpg");
+    // background-position: cover;
     background-color: $color4;
     padding-bottom: 100px;
     display: flex;
@@ -896,7 +898,7 @@ th, td {
 
 .tienda2{
     background-color: $color4;
-    height: 250px;
+    height: 350px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1008,7 +1010,7 @@ th, td {
 }
 
 .prod10{
-    height: auto;
+    height: 600px;
     background-color: $color1;
     margin: 10px;
     padding: 10px;
@@ -1018,6 +1020,7 @@ th, td {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    justify-content: space-between;
 
     h3{
         margin: 25px;
@@ -1033,6 +1036,7 @@ th, td {
     }
     img{
         width: auto;
+        max-width: 90%;
         height: 260px;
     }
 }
@@ -1052,8 +1056,3 @@ th, td {
     height: auto;
     }
 }
-
-
-
-
-

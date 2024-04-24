@@ -868,6 +868,10 @@ th, td {
   .buscador input {
     width: 250px;
   }
+  .search-input::-moz-placeholder {
+    font-size: 1rem;
+    font-style: italic;
+  }
   .search-input::placeholder {
     font-size: 1rem;
     font-style: italic;
@@ -979,6 +983,4 @@ th, td {
   .desc {
     height: auto;
   }
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */
