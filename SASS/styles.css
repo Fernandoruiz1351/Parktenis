@@ -587,6 +587,8 @@ main h3 {
   width: 200px;
   height: 200px;
   padding: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 th, td {
