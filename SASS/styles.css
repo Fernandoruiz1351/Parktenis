@@ -588,7 +588,7 @@ main h3 {
   height: 200px;
   padding: 20px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 th, td {
@@ -972,6 +972,52 @@ th, td {
   height: 260px;
 }
 
+#itemsJs{
+  background-color: red;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.cart{
+  position: fixed;
+  bottom: 250px; 
+  left: 300px; 
+  width: 70px; 
+  height: 70px; 
+  border: 5px solid #012030;
+  background-color: white;
+  border-radius: 50%; 
+  z-index: 1000; 
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contador{
+  width: 20px; /* Ancho del círculo */
+  height: 20px; /* Alto del círculo */
+  background-color: red; /* Color de fondo del círculo */
+  border-radius: 50%; /* Hace que el contenedor sea circular */
+  position: absolute;
+  transform: translate(95%, 10%);
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.contador p{
+  font-size: 10px;
+  margin: 0;
+  color: white;
+}
+
+
+.cart:hover{
+  background-color: #9AEBA3;
+}
+
 .desc {
   height: auto;
 }
@@ -985,4 +1031,14 @@ th, td {
   .desc {
     height: auto;
   }
-}/*# sourceMappingURL=styles.css.map */
+}
+
+  /* CARRITO */
+
+  .quepasa{
+    background-color: blue;
+    height: 300px;
+    width: auto;
+    display: flex;
+    align-items: center;
+  }
