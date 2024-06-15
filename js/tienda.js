@@ -33,25 +33,6 @@ function actualizarContador() {
 
 actualizarContador();
 
-let deleteJs = document.getElementById("deleteJs");
-deleteJs.innerHTML = `
-    <div class="btn">
-        <button type="button" class="borrarCarrito">Borrar carrito</button>
-    </div> 
-`;
-
-function borrarCarrito(borrar) {
-    borrar.addEventListener("click", function () {
-        localStorage.clear();
-        carrito = [];
-        actualizarContador();
-        carritoJs.innerHTML = ''; 
-    });
-}
-
-let botonBorrar = document.querySelector(".borrarCarrito");
-borrarCarrito(botonBorrar);
-
 function agregarEventoCompra(boton, item) {
     boton.addEventListener("click", function () {
         carrito.push(item);
