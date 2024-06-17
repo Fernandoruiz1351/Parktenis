@@ -25,6 +25,9 @@ let carritoJs = document.getElementById("carritoJs");
 let contadorElemento = document.querySelector(".contador");
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
+function formatearPrecio(numero) {
+    return numero.toLocaleString('es-ES', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
 
 function actualizarContador() {
     contadorElemento.innerHTML = `<p>${carrito.length}</p>`;
@@ -51,7 +54,7 @@ for (let item of items) {
             <div class="desc">
                 <p class="fs-5">${item.descrip}</p>
             </div>
-            <p class="precio fs-5">$${item.precio}</p>
+            <p class="precio fs-5">$${formatearPrecio(item.precio)}</p>
             <div class="btn">
                 <button type="button" class="boton-compra">Comprar</button>
             </div>  

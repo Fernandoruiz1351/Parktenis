@@ -743,7 +743,7 @@ td {
 }
 
 /* RESERVAS */
-.res {
+.ress {
   color: white;
   background-color: #012030;
   text-align: center;
@@ -1114,12 +1114,12 @@ td {
 /* CARRITO */
 .encabezado {
   background-color: #012030;
+  width: 100%;
   height: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  justify-content: center;
 }
 
 .encabezado p {
@@ -1128,9 +1128,24 @@ td {
 
 .carro {
   display: flex;
+  align-items: start;
   width: 100%;
 }
 
+@media (max-width: 850px) {
+  .carro {
+    display: flex;
+    flex-direction: column;
+  }
+  .carro p {
+    font-size: 15px !important;
+  }
+}
+@media (max-width: 500px) {
+  .carro p {
+    font-size: 10px !important;
+  }
+}
 .res {
   background-color: rgb(226, 226, 226);
   color: #012030;
@@ -1139,9 +1154,14 @@ td {
   margin: 10px;
   padding: 10px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .resumen {
+  width: 80%;
   background-color: rgb(226, 226, 226);
   height: auto;
   padding-top: 10px;
@@ -1152,10 +1172,11 @@ td {
 }
 
 .resumenProd {
-  width: 70%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   border: 1px solid #024e74;
   border-radius: 10px;
   margin: 10px;
@@ -1172,6 +1193,14 @@ td {
   flex-wrap: wrap;
 }
 
+@media (max-width: 850px) {
+  .res {
+    width: 80%;
+  }
+  .carrito {
+    width: 100%;
+  }
+}
 .cart10 {
   height: 200px;
   width: 100%;
@@ -1203,7 +1232,7 @@ td {
 }
 
 .cart10 .imagen {
-  width: 200px;
+  max-width: 150px;
 }
 
 .cart10 img {
@@ -1211,8 +1240,47 @@ td {
   height: 150px;
 }
 
+.cart10 .btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  .cart10 img {
+    height: 80px;
+  }
+  .boton-eliminar {
+    font-size: 10px !important;
+    padding: 5px 10px;
+  }
+  .btn button {
+    padding: 5px 10px;
+  }
+}
+.descCart {
+  width: 50%;
+  color: red;
+  display: flex;
+  justify-content: center;
+}
+
 .descCart p {
-  width: 300px;
+  width: 80%;
+}
+
+.fs-5 {
+  color: green;
+  margin: 0;
+}
+
+.total {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .total span {
@@ -1224,6 +1292,7 @@ td {
   height: 100%;
   min-height: 90vh;
   background-color: #012030;
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;

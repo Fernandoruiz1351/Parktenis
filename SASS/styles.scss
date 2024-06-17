@@ -1055,3 +1055,159 @@ th, td {
     height: auto;
     }
 }
+
+/* CARRITO */
+.encabezado {
+    background-color: #012030;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.encabezado p {
+    color: white;
+}
+
+
+.carro {
+    display: flex;
+    width: 100%;
+}
+
+@media (max-width: 850px) {
+    .carro {
+    display: flex;
+    flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    .carro .fs-5 {
+    font-size: 5px;
+    }
+}
+
+.res{
+    background-color: rgb(226, 226, 226);
+    color:#012030;
+    width: 30%;
+    border: 3px solid #024e74;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.resumen {
+    background-color: rgb(226, 226, 226);
+    height: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.resumenProd{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #024e74;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+#precio{
+    color: blue;
+}
+
+
+.carrito {
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 850px) {
+    .res {
+    width:100%;
+    }
+    .carrito {
+    width:100%;
+    }
+}
+
+.cart10 {
+    height: 200px;
+    width: 100%;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: #024e74 2px solid;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.cart10 h3 {
+    margin: 25px;
+    color: #012030;
+    height: 120px;
+}
+
+.cart10 .precio {
+    color: blue;
+    height: 20px;
+}
+
+.cart10 p {
+    color: #024e74;
+
+}
+
+.cart10 .imagen{
+    width: 200px;
+
+}
+.cart10 img {
+    width: auto;
+    height: 150px;
+}
+
+.descCart{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.descCart p{
+    width: 80%;
+}
+
+.total span{
+    color: blue;
+}
+
+.finalizar{
+    width: 100%;
+    height: 100%;
+    min-height: 90vh;
+    background-color:#012030;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.finalizar h2{
+    color: white;
+}
