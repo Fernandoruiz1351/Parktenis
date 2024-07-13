@@ -1111,6 +1111,7 @@ td {
     height: auto;
   }
 }
+
 /* CARRITO */
 .encabezado {
   background-color: #012030;
@@ -1119,6 +1120,7 @@ td {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
 }
 

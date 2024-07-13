@@ -24,39 +24,6 @@ let totalCompra = 0;
 
 let pagoCuotas = document.createElement("div");
 
-
-// En esta funcion estoy intentando mejorar el codigo. Sigo trabajando en esto a futuro..
-
-// function crearBotonCuotas(c) {
-//     let formasPago = document.createElement("div");
-//     formasPago.className = "pagos";
-//     formasPago.innerHTML = `
-//         <div class="btn" id="btn">
-//             <button type="button" class="cuotas">${c.cuota} cuota/s</button> (Interes ${c.interes}%)
-//         </div>
-//     `;
-
-//     let botonCuotas = formasPago.querySelector(".cuotas");
-//     botonCuotas.addEventListener("click", function () {
-//         pagoCuotas = document.createElement("div");
-//         pagoCuotas.className = "pagoCuotas";
-//         pagoCuotas.innerHTML = "hola";
-//         formasPago.appendChild(pagoCuotas);
-//     });
-
-//     return formasPago;
-// }
-
-// function pago(){
-//     pagoCuotas.innerHTML="";
-//     totalPagos.innerHTML="";
-//     for(let c of cuotas){
-//         let pagar = crearBotonCuotas(c);
-//         totalPagos.appendChild(pagar)
-//     }
-// }
-
-
 function pago() {
     totalPagos.innerHTML = "";
     for (let c of cuotas) {
@@ -98,15 +65,15 @@ function actualizarResumen() {
     totalCompra = 0;
 
     for (let i = 0; i < carrito.length; i++) {
-        let item = carrito[i];
-        totalCompra += item.precio;
+        let product = carrito[i];
+        totalCompra += product.price;
         let resumenCompra = document.createElement("div");
         resumenCompra.className = "resumenProd";
         resumenCompra.innerHTML = `
             <b><p>Producto ${i + 1}</p></b>
             <div>
-                <p>${item.descrip}</p>
-                <p id="precio">$${formatearPrecio(item.precio)}</p>
+                <p>${product.title}</p>
+                <p id="precio">$${formatearPrecio(product.price)}</p>
             </div>
         `;
         resumen.appendChild(resumenCompra);
@@ -129,17 +96,17 @@ function actualizarCarrito() {
     carritoJs.innerHTML = ''; 
 
     for (let i = 0; i < carrito.length; i++) {
-        let item = carrito[i];
+        let product = carrito[i];
         let contenedor = document.createElement("div");
         contenedor.className = "cart10";
         contenedor.innerHTML = `
             <div class="imagen">
-                <img src=${item.img} alt="">
+                <img src=${product.thumbnail} alt="">
             </div>
             <div class="descCart">
-                <p class="fs-5">${item.descrip}</p>
+                <p class="fs-5">${product.title}</p>
             </div>
-            <p class="precio fs-5">$${formatearPrecio(item.precio)}</p>
+            <p class="precio fs-5">$${formatearPrecio(product.price)}</p>
             <div class="btn">
                 <button type="button" class="boton-eliminar">Eliminar</button>
             </div>  
