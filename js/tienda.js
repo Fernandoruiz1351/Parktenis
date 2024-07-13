@@ -51,7 +51,7 @@ function displayProducts(products) {
 
         productElement.innerHTML = `
             <div class="prod10">
-                <img src=${product.thumbnail} alt=${product.title}>
+                <img width="150" height="150" src=${product.thumbnail} alt=${product.title}>
                 <div class="desc">
                     <p class="fs-5">${product.title}</p>
                 </div>

@@ -1049,11 +1049,13 @@ td {
   color: #024e74;
 }
 
-.prod10 img {
+/* .prod10 img {
   width: auto;
   max-width: 90%;
-  height: 260px;
-}
+  height: 160px;
+} */
+
+
 
 .cart {
   position: fixed;
